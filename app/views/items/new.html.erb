@@ -1,0 +1,21 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">出品する</h1>
+    <%= form_tag("/items/create",{multipart: true}) do %>
+      <div class="form">
+      <div class="form-body">
+        <% @item.errors.messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        <p>画像</p>
+        <input name="image" type="file">
+        <p>出品内容</p>
+        <textarea name="content"><%= @item.content %></textarea>
+        <input type="submit" value="出品">
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>

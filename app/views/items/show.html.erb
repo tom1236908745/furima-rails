@@ -1,0 +1,40 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="post-user-name">
+         <%= link_to(@user.name, "/users/#{@user.id}")%> さんの出品です
+      </div>
+      <img src="<%= "/item_images/#{@item.image_name}" %>">
+      <p>
+        <%= @item.content %>
+      </p>
+      <div class="post-time">
+        <%= @item.created_at%>
+      </div>
+      <% if @current_user %>
+        <% if Like.find_by(user_id: @current_user.id, item_id: @item.id) %>
+          <%= button_to("/likes/#{@item.id}/destroy", {method: "delete", class: "button-design"}) do %>
+            <span class="fa fa-heart liked-btn"></span>
+          <% end %>
+          <%= @likes_count %>
+        <% else %>
+          <%= button_to("/likes/#{@item.id}/create", {class: "button-design"})do %>
+            <span class="fa fa-heart unliked-btn"></span>
+          <% end %>
+          <%= @likes_count %>
+        <% end %>
+      <% else %>
+        <%= button_to("/likes/#{@item.id}/create", {class: "button-design"})do %>
+            <span class="fa fa-heart unliked-btn"></span>
+          <% end %>
+          <%= @likes_count %>
+      <% end %>
+      <% if @match_user %>
+        <div class="post-menus">
+          <%= button_to("編集", "/items/#{@item.id}/edit", {class: "button-design"}) %>
+          <%= button_to("削除", "/items/#{@item.id}/destroy", {method: "delete", class: "button-design"}) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

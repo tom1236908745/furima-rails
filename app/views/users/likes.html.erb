@@ -1,0 +1,32 @@
+<div class="main user-show">
+
+  <div class="container">
+    <div class="user">
+      <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+      <% if @match_user %>
+        <%= button_to('編集', "/users/#{@user.id}/edit", {method: "get", class: "button-design"}) %>
+        <%= button_to('アカウントの削除', "/users/#{@user.id}/destroy", {method: "delete", class: "button-design", data: { confirm: "削除?" }}) %>
+      <% end %>
+    </div>
+  </div>
+    
+    <ul class="user-tabs">
+      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+    </ul>
+    
+    <% @likes.each do |like| %>
+      <% item = Item.find_by(id: like.item_id) %>
+      <div class="posts-index-item">
+        <div>
+          <%= link_to image_tag("/item_images/#{item.image_name}"), "/items/#{item.id}" %>
+        </div>
+        <div class="post-user-name">
+          <%= link_to(item.user.name, "/users/#{item.user.id}") %>
+        </div>
+        <%= link_to(item.content, "/items/#{item.id}") %>
+      </div>
+    <% end %>
+  </div>
+</div>
