@@ -114,7 +114,6 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jmespath (1.5.0)
-    kgio (2.11.4)
     loofah (2.13.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -125,13 +124,9 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.6.1)
     minitest (5.15.0)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
-      racc (~> 1.4)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     public_suffix (4.0.6)
@@ -169,7 +164,6 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
-    raindrops (0.20.0)
     rake (13.0.6)
     regexp_parser (2.2.0)
     reline (0.3.0)
@@ -205,9 +199,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    unicorn (5.4.1)
-      kgio (~> 2.6)
-      raindrops (~> 0.7)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -225,7 +216,6 @@ GEM
     zeitwerk (2.5.3)
 
 PLATFORMS
-  ruby
   x86_64-darwin-20
 
 DEPENDENCIES
@@ -247,12 +237,11 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
-  unicorn (= 5.4.1)
   web-console
   webdrivers
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 3.0.3p157
 
 BUNDLED WITH
    2.2.32
