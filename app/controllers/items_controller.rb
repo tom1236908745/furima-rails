@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     #   File.binwrite("public/item_images/#{@item.image_name}",image.read)
     #   if @item.save
     #     flash[:notice] = "出品完了しました"
-    #     redirect_to("/items/index")
+    #     redirect_to("/")
     #   else
     #     render :new
     #   end
@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "出品完了しました"
-      redirect_to("/items/index")
+      redirect_to("/")
     else
       render :new
     end
@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
     end
     if @item.save
       flash[:notice] = "出品内容を編集しました"
-      redirect_to("/items/index")
+      redirect_to("/")
     else
       render :edit
     end
@@ -66,6 +66,6 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find_by(id: params[:id])
     @item.destroy
-    redirect_to("/items/index")
+    redirect_to("/")
   end
 end

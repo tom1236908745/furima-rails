@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Back</title>
+    <title>furima</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,43 +9,39 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= favicon_link_tag('favicon.ico') %>
   </head>
   
   <header>
     <div class="header-logo">
-      
-      <a href="https://fril.jp/">
-      <img alt="フリマアプリ ラクマ" src="https://asset.fril.jp/assets/new_web/site-logo_with_logo_sp-254ffb2043587e4c21fd40960966f5b42d53322ac22ec17d39cbfdcfb814280c.png">
-      </a>
+    <%= link_to image_tag("logo.png"), "/" %>
     </div>
     <ul class="header-menus">
-
       <li>
-        <%= link_to("初めての方へ", "/guide") %>
+        <%= link_to("furima", "/") %>
       </li>
       <li>
-        <%= link_to("一覧", "/items/index") %>
+        <%= link_to("about", "/guide") %>
       </li>
       <li>
-        <%= link_to("ユーザー一覧", "/users/index") %>
+        <%= link_to("users", "/users/index") %>
       </li>
-
       <% if @current_user %>
         <li>
           <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
         </li>
         <li>
-          <%= link_to("新規投稿", "/items/new") %>
+          <%= link_to("new", "/items/new") %>
         </li>
         <li>
-        <%= button_to("ログアウト", "/logout", {method: "post", class: "button-design"})%>
+        <%= button_to("logout", "/logout", {method: "post", class: "button-design"})%>
         </li>
       <% else %>
         <li>
-          <%= link_to("ログイン", "/login") %>
+          <%= link_to("login", "/login") %>
         </li>
         <li>
-          <%= link_to("新規登録", "/signup") %>
+          <%= link_to("sign up", "/signup") %>
         </li>
       <% end %>
     </ul>
