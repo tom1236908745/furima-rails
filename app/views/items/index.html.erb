@@ -5,10 +5,10 @@
       <div>
         <%= link_to image_tag(item.image), "/items/#{item.id}" %>
       </div>
-      <%= item.id%>
       <div>
         <%= link_to(item.content, "/items/#{item.id}" )%>
       </div>
+      <%= item.money%>円
     </li>
   <% end %>
   </ul>

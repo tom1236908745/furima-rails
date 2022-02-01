@@ -2,11 +2,6 @@
   <div class="container">
     <h1 class="form-heading">出品する</h1>
     <%= form_with url: "/items/create",  multipart: true do |form| %>
-      <%= file_field_tag :image %>
-      <%= form.text_field :content %>
-      <%= form.submit %>
-    <% end %>
-    <%= form_tag("/items/create",{multipart: true}) do %>
       <div class="form">
       <div class="form-body">
         <% @item.errors.messages.each do |message| %>
@@ -14,11 +9,29 @@
             <%= message %>
           </div>
         <% end %>
-        <%= %>
+        
         <p>画像</p>
-        <input name="image" type="file">
+        <%= file_field_tag :image %>
+        <br>
+        <br>
         <p>出品内容</p>
         <textarea name="content"><%= @item.content %></textarea>
+        <br>
+        <br>
+        <p>カテゴリー</p>
+        <select name="category">
+          <% if @item.category %>
+            <option value="<%= @item.category %>"><%= @item.category %></option>
+          <% end %>
+          <option value="famale">レディース</option>
+          <option value="male">メンズ</option>
+          <option value="cosmetic">コスメ/美容</option>
+          <option value="other">その他</option>
+        </select>
+        <br>
+        <br>
+        <p>値段</p>
+        <input type="number" name="money"><%= @item.money %></input>
         <input type="submit" value="出品">
       </div>
       </div>

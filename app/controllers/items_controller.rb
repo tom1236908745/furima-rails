@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
   def create
-    @item = Item.new(content: params[:content], image: params[:image],user_id: @current_user.id)
+    @item = Item.new(content: params[:content], image: params[:image], user_id: @current_user.id, category: params[:category], money: params[:money] )
     
     # if @item.save && params[:image]
     #   @item.image_name = "#{@item.id}.jpg"
