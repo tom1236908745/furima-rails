@@ -17,6 +17,21 @@
   letter-spacing: normal; /* 文字間を元に戻す */
   white-space: normal;
 }
+.posts-top-buttom {
+  display: block;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  line-height: 48px;
+  height: 48px;
+  margin: 15rem 2rem 0;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.posts-top-buttom:hover {
+  color: #ec0606;
+}
 @media screen and (max-width: 900px) {
   .posts-index-item {
     padding: 24px 16px 0;
@@ -26,6 +41,21 @@
     display: inline-block;
     letter-spacing: normal; /* 文字間を元に戻す */
     white-space: normal;
+  }
+  .posts-top-buttom {
+    display: block;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    line-height: 48px;
+    height: 48px;
+    margin: 8rem 2rem 0;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .posts-top-buttom:hover {
+    color: #ec0606;
   }
 }
 @media screen and (max-width: 600px) {
@@ -38,6 +68,21 @@
     letter-spacing: normal;
     white-space: normal;
   }
+  .posts-top-buttom {
+    display: block;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    line-height: 48px;
+    height: 48px;
+    margin: 5rem 2rem 0;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .posts-top-buttom:hover {
+    color: #ec0606;
+  }
 }
 @media screen and (max-width: 470px) {
   .posts-index-item {
@@ -48,6 +93,21 @@
     display: inline-block;
     letter-spacing: normal;
     white-space: normal;
+  }
+  .posts-top-buttom {
+    display: block;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    line-height: 48px;
+    height: 48px;
+    margin: 3rem 2rem 0;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .posts-top-buttom:hover {
+    color: #ec0606;
   }
 }
 .posts-index-item img {
@@ -78,21 +138,7 @@
   padding-left: 25px;
   text-align: left;
 }
-.posts-top-buttom {
-  display: block;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  font-size: 14px;
-  line-height: 48px;
-  height: 48px;
-  margin: 32px 16px 0;
-  border-radius: 4px;
-  text-align: center;
-  box-sizing: border-box;
-}
-.posts-top-buttom:hover {
-  color: #ec0606;
-}
+
 /* posts/show ================================ */
 .posts-show form {
   display: inline;
