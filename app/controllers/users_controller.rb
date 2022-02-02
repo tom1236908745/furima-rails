@@ -50,7 +50,7 @@ class UsersController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインできました"
-      redirect_to("/items/index")
+      redirect_to("/")
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
       @email = params[:email]

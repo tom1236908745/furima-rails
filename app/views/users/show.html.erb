@@ -20,7 +20,7 @@
     <% @user.items.each do |item| %>
       <li class="posts-index-item">
         <div>
-          <%= link_to image_tag("/item_images/#{item.image_name}"), "/items/#{item.id}" %>
+          <%= link_to image_tag(item.image), "/items/#{item.id}" %>
         </div>
         <div>
           <%= link_to(item.content, "/items/#{item.id}" )%>

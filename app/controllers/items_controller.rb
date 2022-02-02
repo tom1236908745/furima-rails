@@ -5,16 +5,18 @@ class ItemsController < ApplicationController
   end
   def show
     @item = Item.find_by(id: params[:id])
-    if @item.user
+    logger.debug(@item)
+    if @item
       @user = @item.user
       @match_user = false
+      @likes_count = Like.where(item_id: @item.id).count
       if @current_user
         if @current_user.id == @item.user_id
           @match_user = true
         end
       end
     end
-    @likes_count = Like.where(item_id: @item.id).count
+    
   end
 
   def new
