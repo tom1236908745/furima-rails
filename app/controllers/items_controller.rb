@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order(created_at: :desc)
   end
+  def category
+    @items = Item.where(category: params[:category]).order(created_at: :desc)
+  end
   def show
     @item = Item.find_by(id: params[:id])
     logger.debug(@item)
