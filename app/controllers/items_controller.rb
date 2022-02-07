@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
   def show
     @item = Item.find_by(id: params[:id])
-    logger.debug(@item)
+    
     if @item
       @user = @item.user
       @match_user = false
@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
           @match_user = true
         end
       end
+      @comments = Comment.all.order(created_at: :desc)
     end
     
   end

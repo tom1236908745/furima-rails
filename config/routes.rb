@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  
+  post 'comments/:item_id/create' => "comments#create"
+
   delete 'likes/:item_id/destroy' => "likes#destroy"
   post 'likes/:item_id/create' => "likes#create"
 

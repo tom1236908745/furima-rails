@@ -6,7 +6,7 @@ class LikesController < ApplicationController
         item_id: params[:item_id]
       )
       @like.save
-      redirect_to("/posts/#{params[:item_id]}")
+      redirect_to("/items/#{params[:item_id]}")
       @current_user_id = @current_user.id
     else
       redirect_to("/login")
@@ -14,11 +14,14 @@ class LikesController < ApplicationController
     
   end
   def destroy
-    @like = Like.find_by(
-      user_id: @current_user.id,
-      item_id: params[:item_id]
-    )
-    @like.destroy
-    redirect_to("/posts/#{params[:item_id]}")
+    if @current_user
+      @like = Like.find_by(
+        user_id: @current_user.id,
+        item_id: params[:item_id]
+      )
+      @like.destroy
+      redirect_to("/items/#{params[:item_id]}")
+    else
+      redirect_to("/login")
   end
 end
